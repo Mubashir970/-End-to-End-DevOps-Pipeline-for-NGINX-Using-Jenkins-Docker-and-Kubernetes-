@@ -1,11 +1,4 @@
-# Dockerfile
-FROM ubuntu:20.04
-
-RUN apt-get update && \
-    apt-get install -y nginx curl && \
-    apt-get clean
-
+FROM nginx:latest
+COPY ./index.html /usr/share/nginx/html/index.html
 EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
 
